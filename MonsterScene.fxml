@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MonsterController">
+   <children>
+      <ScrollPane prefHeight="700.0" prefWidth="600.0">
+        <content>
+          <AnchorPane prefHeight="700.0" prefWidth="600.0">
+               <children>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label fx:id="monsterNameLabel" text="Monster Name">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="sizeTypeAlignmentLabel" text="size type, alignment" />
+                        <HBox spacing="5.0">
+                           <children>
+                              <Label text="AC:" />
+                              <Label fx:id="acLabel" text="AC#" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="5.0">
+                           <children>
+                              <Label text="HP" />
+                              <Label fx:id="hpLabel" text="HP#" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="5.0">
+                           <children>
+                              <Label text="Speed" />
+                              <Label fx:id="speedLabel" text="Speed#" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="30.0">
+                           <children>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Str" />
+                                    <Label fx:id="strLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Str#" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Dex" />
+                                    <Label fx:id="dexLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Dex#" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Con" />
+                                    <Label fx:id="conLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Con#" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Int" />
+                                    <Label fx:id="intLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Int#" />
+                                 </children>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Wis" />
+                                    <Label fx:id="wisLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Wis#" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Cha" />
+                                    <Label fx:id="chaLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Cha#" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
