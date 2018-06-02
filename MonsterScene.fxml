@@ -14,7 +14,7 @@
         <content>
           <AnchorPane prefHeight="700.0" prefWidth="600.0">
                <children>
-                  <VBox spacing="5.0">
+                  <VBox fx:id="vBox" spacing="5.0">
                      <children>
                         <Label fx:id="monsterNameLabel" text="Monster Name">
                            <font>
@@ -44,42 +44,122 @@
                            <children>
                               <VBox alignment="CENTER">
                                  <children>
-                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Str" />
-                                    <Label fx:id="strLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Str#" />
+                                    <Label text="Str" />
+                                    <Label fx:id="strLabel" text="Str#" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER">
                                  <children>
-                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Dex" />
-                                    <Label fx:id="dexLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Dex#" />
+                                    <Label text="Dex" />
+                                    <Label fx:id="dexLabel" text="Dex#" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER">
                                  <children>
-                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Con" />
-                                    <Label fx:id="conLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Con#" />
+                                    <Label text="Con" />
+                                    <Label fx:id="conLabel" text="Con#" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER">
                                  <children>
-                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Int" />
-                                    <Label fx:id="intLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Int#" />
-                                 </children>
-                              </VBox>
-                              <VBox>
-                                 <children>
-                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Wis" />
-                                    <Label fx:id="wisLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Wis#" />
+                                    <Label text="Int" />
+                                    <Label fx:id="intLabel" text="Int#" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER">
                                  <children>
-                                    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Cha" />
-                                    <Label fx:id="chaLabel" alignment="TOP_LEFT" contentDisplay="CENTER" text="Cha#" />
+                                    <Label text="Wis" />
+                                    <Label fx:id="wisLabel" text="Wis#" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Cha" />
+                                    <Label fx:id="chaLabel" text="Cha#" />
                                  </children>
                               </VBox>
                            </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
                         </HBox>
+                        <HBox fx:id="savingThrowsHBox" spacing="5.0">
+                           <children>
+                              <Label text="Saving Throws:" />
+                              <Label fx:id="savingThrowsLabel" text="SavingThrows#s" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="skillListHBox" spacing="5.0">
+                           <children>
+                              <Label text="Skills:" />
+                              <Label fx:id="skillListLabel" text="Skills List" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="damageVulnerabilitiesHBox" spacing="5.0">
+                           <children>
+                              <Label fx:id="damageVulnerabilitiesLabel" text="Damage Vulnerabilitys" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="damageResistancesHBox" spacing="5.0">
+                           <children>
+                              <Label fx:id="damageResistancesLabel" text="Damage Resistances" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="damageImmunitiesHBox" spacing="5.0">
+                           <children>
+                              <Label fx:id="damageImmunitiesLabel" text="Damage Immunities" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="conditionImmunitiesHBox" spacing="5.0">
+                           <children>
+                              <Label fx:id="conditionImmunitiesLabel" text="Condition Immunities" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="sensesHBox" spacing="5.0">
+                           <children>
+                              <Label text="Senses" />
+                              <Label fx:id="sensesLabel" text="SensesList" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="languagesHBox" spacing="5.0">
+                           <children>
+                              <Label text="Languages:" />
+                              <Label fx:id="languagesLabel" text="Languages List" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="challengeRatingHBox" spacing="5.0">
+                           <children>
+                              <Label text="Challenge Rating(CR):" />
+                              <Label fx:id="challengeRatingLabel" text="Challenge Rating #" />
+                           </children>
+                        </HBox>
+                        <VBox fx:id="specialAbilitiesVBox">
+                           <children>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <Label text="Special Abilities" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="actionsVBox">
+                           <children>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <Label text="Actions" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="legendaryActionsVBox">
+                           <children>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <Label text="Legendary Actions" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

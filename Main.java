@@ -35,7 +35,7 @@ public class Main extends Application {
 		loader.setLocation(Main.class.getResource("MonsterScene.fxml"));
 		AnchorPane monsterScene = loader.load();
 		MonsterController controller = loader.getController();
-		controller.initData(1);
+		controller.initData(25);
 		mainLayout.setCenter(monsterScene);
 	}
 	
