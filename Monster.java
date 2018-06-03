@@ -74,6 +74,8 @@ public class Monster {
 	public Float challengeRating;
 	
 	public Ability[] abilities;
+	public Action[] actions;
+	public Action[] legendaryActions;
 		
 	public String testString;
 	
@@ -288,6 +290,14 @@ public class Monster {
         if(jsonObject.has("challenge_rating")) {
         	challengeRating = jsonObject.getFloat("challenge_rating");
         }
+        
+        
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        
+        
         //special abilities
         if(jsonObject.has("special_abilities")) {
 			JSONArray specialAbilities = jsonObject.getJSONArray("special_abilities");
@@ -302,13 +312,108 @@ public class Monster {
 			    Ability ability = new Ability(attackBonus, desc, abilityName);
 			    abilities[i] = ability;
 			}
-			System.out.println("TEST");
-			for(int i = 0; i < abilities.length; i++) {
-	        	System.out.println("Ability desc: " + abilities[i].desc);
-	        }
+        }
+        
+        //actions
+        if(jsonObject.has("actions")) {
+			JSONArray actionsArray = jsonObject.getJSONArray("actions");
+			actions = new Action[actionsArray.length()];
+			for (int i = 0; i < actionsArray.length(); ++i) {
+				//get ith special ability from json
+			    JSONObject actionJSON = actionsArray.getJSONObject(i);
+			    
+			    Integer damageBonus;
+			    if(actionJSON.has("damage_bonus")){
+			    	damageBonus = actionJSON.getInt("damage_bonus");
+			    }
+			    else {
+			    	damageBonus = null;
+			    }
+			    String damageDice;
+			    if(actionJSON.has("damage_dice")) {
+			    	damageDice = actionJSON.getString("damage_dice");
+			    }
+			    else {
+			    	damageDice = "";
+			    }
+			    Integer attackBonus;
+			    if(actionJSON.has("attack_bonus")) {
+			    	attackBonus = actionJSON.getInt("attack_bonus");
+			    }
+			    else {
+			    	attackBonus = null;
+			    }
+			    String desc;
+			    if(actionJSON.has("desc")) {
+			    	desc = actionJSON.getString("desc");
+			    }
+			    else {
+			    	desc = "";
+			    }			    	        	
+			    String actionName;
+			    if(actionJSON.has("name")) {
+			    	actionName = actionJSON.getString("name");
+			    }
+			    else {
+			    	actionName = "";
+			    }
+
+			    Action action = new Action(damageBonus, damageDice, attackBonus, desc, actionName, false);
+			    actions[i] = action;
+			}
+			
         }
         
         
+        //legendary actions
+        if(jsonObject.has("legendary_actions")) {
+			JSONArray legendaryActionsArray = jsonObject.getJSONArray("legendary_actions");
+			legendaryActions = new Action[legendaryActionsArray.length()];
+			for (int i = 0; i < legendaryActionsArray.length(); ++i) {
+				//get ith special ability from json
+			    JSONObject actionJSON = legendaryActionsArray.getJSONObject(i);
+			    
+			    Integer damageBonus;
+			    if(actionJSON.has("damage_bonus")){
+			    	damageBonus = actionJSON.getInt("damage_bonus");
+			    }
+			    else {
+			    	damageBonus = null;
+			    }
+			    String damageDice;
+			    if(actionJSON.has("damage_dice")) {
+			    	damageDice = actionJSON.getString("damage_dice");
+			    }
+			    else {
+			    	damageDice = "";
+			    }
+			    Integer attackBonus;
+			    if(actionJSON.has("attack_bonus")) {
+			    	attackBonus = actionJSON.getInt("attack_bonus");
+			    }
+			    else {
+			    	attackBonus = null;
+			    }
+			    String desc;
+			    if(actionJSON.has("desc")) {
+			    	desc = actionJSON.getString("desc");
+			    }
+			    else {
+			    	desc = "";
+			    }			    	        	
+			    String actionName;
+			    if(actionJSON.has("name")) {
+			    	actionName = actionJSON.getString("name");
+			    }
+			    else {
+			    	actionName = "";
+			    }
+
+			    Action action = new Action(damageBonus, damageDice, attackBonus, desc, actionName, true);
+			    legendaryActions[i] = action;
+			}
+			
+        }
         
 	}
 

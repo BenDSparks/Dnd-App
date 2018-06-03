@@ -16,6 +16,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
+		this.primaryStage.setResizable(false);
 		this.primaryStage.setTitle("D&D guide");
 		showMainWindow();
 		showMonsterScene();
@@ -34,8 +35,11 @@ public class Main extends Application {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("MonsterScene.fxml"));
 		AnchorPane monsterScene = loader.load();
+		monsterScene.getStylesheets().add(getClass().getResource("monsterStyle.css").toExternalForm());
+
+//		monsterScene.getStylesheets().add("monsterStyle.css");
 		MonsterController controller = loader.getController();
-		controller.initData(25);
+		controller.initData(3);
 		mainLayout.setCenter(monsterScene);
 	}
 	

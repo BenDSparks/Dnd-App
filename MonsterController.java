@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -84,28 +85,22 @@ public class MonsterController implements Initializable {
 	@FXML
 	private Label challengeRatingLabel;
 	@FXML
-	private VBox specialAbilitiesVBox;
+	private VBox abilitiesVBox;
 	@FXML
 	private VBox actionsVBox;
 	@FXML
 	private VBox legendaryActionsVBox;
 	
 	
-	
-	
-	private int monsterNumber;
 	private Monster monster;
-
+	private double width = 600;
+	private double height = 700;
+	
 	public void initData(int monsterNumber) throws IOException {
-		this.monsterNumber = monsterNumber;
 		monster = new Monster(monsterNumber);
-//		getMonsterStats(this.monsterNumber);
 		setView();
 	}
-	
-	
-//	    monster = new Monster(name,size, type, alignment, ac, hp, speed, strength, dexterity, constitution, intelligence, wisdom, charisma); 
-	  
+		  
 	
 	
 	public void setView() {
@@ -443,7 +438,10 @@ public class MonsterController implements Initializable {
 		}
 		if(monster.challengeRating != null) {
 			Float cr = monster.challengeRating;
-			if(cr == 0.125) {
+			if(cr == 0) {
+				challengeRatingLabel.setText("0");				
+			}
+			else if(cr == 0.125) {
 				challengeRatingLabel.setText("1/8");
 			}
 			else if (cr == .25) {
@@ -466,13 +464,76 @@ public class MonsterController implements Initializable {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		//special abilities
+		if(monster.abilities != null) {			
+			for (int i = 0; i < monster.abilities.length; i++) {
+				HBox hBox1 = new HBox();
+				Label nameLabel = new Label(monster.abilities[i].name);
+				hBox1.getChildren().add(nameLabel);
+				abilitiesVBox.getChildren().add(hBox1);
+				HBox hBox2 = new HBox();
+				Label descLabel = new Label(monster.abilities[i].desc);
+				hBox2.getChildren().add(descLabel);
+				abilitiesVBox.getChildren().add(hBox2);
+			}
+		}
+		else {
+			vBox.getChildren().remove(abilitiesVBox);
+		}
+				
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		//actions
+		if(monster.actions != null) {			
+			for (int i = 0; i < monster.actions.length; i++) {
+				HBox hBox1 = new HBox();
+				hBox1.setPadding(new Insets(10, 0, 0, 0));
+				Label nameLabel = new Label(monster.actions[i].name);
+				hBox1.getChildren().add(nameLabel);
+				actionsVBox.getChildren().add(hBox1);
+				HBox hBox2 = new HBox();
+				Label descLabel = new Label(monster.actions[i].desc);
+				descLabel.setWrapText(true);
+				descLabel.setMaxWidth(width-40);
+				hBox2.getChildren().add(descLabel);
+				actionsVBox.getChildren().add(hBox2);
+			}
+		}
+		else {
+			vBox.getChildren().remove(actionsVBox);
+		}
+		
+		
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		
+		//legendary actions
+				if(monster.legendaryActions != null) {			
+					for (int i = 0; i < monster.legendaryActions.length; i++) {
+						HBox hBox1 = new HBox();
+						hBox1.setPadding(new Insets(10, 0, 0, 0));
+						Label nameLabel = new Label(monster.legendaryActions[i].name);						
+						hBox1.getChildren().add(nameLabel);
+						legendaryActionsVBox.getChildren().add(hBox1);
+						HBox hBox2 = new HBox();
+						Label descLabel = new Label(monster.legendaryActions[i].desc);
+						descLabel.setWrapText(true);
+						descLabel.setMaxWidth(width-40);
+						hBox2.getChildren().add(descLabel);
+						legendaryActionsVBox.getChildren().add(hBox2);
+					}
+				}
+				else {
+					vBox.getChildren().remove(actionsVBox);
+				}	
+		
+		
 		
 	}
 
-	public void setMonsterNumber(int monsterNumber) {
-		this.monsterNumber = monsterNumber;
-		System.out.println("Monster number = " + monsterNumber);
-	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
