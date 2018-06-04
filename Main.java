@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	private Stage primaryStage;
 	private BorderPane mainLayout;
+	
+	public int monsterNumber;
+	
 //	private AnchorPane monsterScene;
 
 	@Override
@@ -19,7 +22,8 @@ public class Main extends Application {
 		this.primaryStage.setResizable(false);
 		this.primaryStage.setTitle("D&D guide");
 		showMainWindow();
-		showMonsterScene();
+		showMonsterPicker();
+//		showMonsterScene(3);
 	}
 	
 	private void showMainWindow() throws IOException {
@@ -31,20 +35,41 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
-	private void showMonsterScene() throws IOException {
+	
+	public void changeMonsterScene(int monsterNumber) throws IOException {
+		showMonsterScene(monsterNumber);
+	}
+	
+	private void showMonsterScene(int monsterNumber) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("MonsterScene.fxml"));
 		AnchorPane monsterScene = loader.load();
-		monsterScene.getStylesheets().add(getClass().getResource("monsterStyle.css").toExternalForm());
-
-//		monsterScene.getStylesheets().add("monsterStyle.css");
+//		monsterScene.getStylesheets().add(getClass().getResource("monsterStyle.css").toExternalForm());
 		MonsterController controller = loader.getController();
-		controller.initData(3);
+		controller.initData(monsterNumber);
 		mainLayout.setCenter(monsterScene);
+	}
+	
+	private void showMonsterPicker() throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("MonsterPicker.fxml"));
+		AnchorPane monsterPickerScene = loader.load();
+		MonsterPickerController controller = loader.getController();
+		controller.setMainController(this);
+		controller.initialize();
+		mainLayout.setLeft(monsterPickerScene);
 	}
 	
 	
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
+	public void testMain() {
+		System.out.println("TESTING IN MAIN");
+	}
+	
+	
 }
+
+

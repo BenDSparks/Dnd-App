@@ -89,10 +89,9 @@ public class Monster {
 		
 		Scanner sc = new Scanner(url.openStream());
 		String jsonString = "";
-		System.out.println("\nJSON  string format");
 		while(sc.hasNext()){
 		jsonString+=sc.nextLine();
-		System.out.println(jsonString);
+//		System.out.println(jsonString);
 		}
 		sc.close();
 		

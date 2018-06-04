@@ -24,6 +24,7 @@ import javafx.scene.text.Text;
 
 public class MonsterController implements Initializable {
 
+	
 	@FXML
 	private VBox vBox;
 	@FXML
@@ -101,7 +102,13 @@ public class MonsterController implements Initializable {
 		setView();
 	}
 		  
-	
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+
+	}
+
 	
 	public void setView() {
 		
@@ -472,6 +479,8 @@ public class MonsterController implements Initializable {
 				abilitiesVBox.getChildren().add(hBox1);
 				HBox hBox2 = new HBox();
 				Label descLabel = new Label(monster.abilities[i].desc);
+				descLabel.setWrapText(true);
+				descLabel.setMaxWidth(width-40);
 				hBox2.getChildren().add(descLabel);
 				abilitiesVBox.getChildren().add(hBox2);
 			}
@@ -534,11 +543,5 @@ public class MonsterController implements Initializable {
 		
 	}
 
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-
-	}
 
 }
