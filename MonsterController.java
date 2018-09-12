@@ -91,6 +91,12 @@ public class MonsterController implements Initializable {
 	private VBox actionsVBox;
 	@FXML
 	private VBox legendaryActionsVBox;
+//	@FXML
+//	private Label specialAbilitiesLabel;
+//	@FXML
+//	private Label actionLabel;
+//	@FXML
+//	private Label legendaryActions;
 	
 	
 	private Monster monster;
@@ -536,7 +542,8 @@ public class MonsterController implements Initializable {
 					}
 				}
 				else {
-					vBox.getChildren().remove(actionsVBox);
+					System.out.println("removing legendary actionVbox");
+					vBox.getChildren().remove(legendaryActionsVBox);
 				}	
 		
 		

@@ -17,6 +17,8 @@ public class MonsterPickerController implements Initializable{
 
 	@FXML
 	private VBox vBox;
+	@FXML
+	private Button backButton;
 	
 	private Main mainController;
 	
@@ -106,6 +108,10 @@ public class MonsterPickerController implements Initializable{
 		
 	}
 
+	
+	public void goBack() {
+		mainController.goBackAMonsterScene();
+	}
 	
 	
 }

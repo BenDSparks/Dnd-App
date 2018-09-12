@@ -10,7 +10,7 @@
 
 <AnchorPane stylesheets="@monsterStyle.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MonsterController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="700.0" prefWidth="600.0">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="700.0" prefWidth="600.0" vbarPolicy="NEVER">
         <content>
           <AnchorPane prefHeight="700.0" prefWidth="600.0">
                <children>
@@ -83,54 +83,58 @@
                               <Insets bottom="10.0" top="10.0" />
                            </padding>
                         </HBox>
-                        <HBox fx:id="savingThrowsHBox" spacing="5.0" styleClass="features">
+                        <HBox fx:id="savingThrowsHBox" alignment="CENTER_LEFT" maxWidth="580.0" spacing="5.0" styleClass="features">
                            <children>
-                              <Label text="Saving Throws:" />
-                              <Label fx:id="savingThrowsLabel" text="SavingThrows#s" />
+                              <Label minWidth="-Infinity" prefWidth="95.0" text="Saving Throws:" />
+                              <Label fx:id="savingThrowsLabel" text="SavingThrows#s" wrapText="true" />
                            </children>
                         </HBox>
-                        <HBox fx:id="skillListHBox" spacing="5.0" styleClass="features">
+                        <HBox fx:id="skillListHBox" alignment="CENTER_LEFT" maxWidth="580.0" spacing="5.0" styleClass="features">
                            <children>
-                              <Label text="Skills:" />
+                              <Label minWidth="-Infinity" prefWidth="36.0" text="Skills:" />
                               <Label fx:id="skillListLabel" text="Skills List" />
                            </children>
                         </HBox>
-                        <HBox fx:id="damageVulnerabilitiesHBox" spacing="5.0" styleClass="features">
+                        <HBox fx:id="damageVulnerabilitiesHBox" alignment="CENTER_LEFT" maxWidth="580.0" spacing="5.0" styleClass="features">
                            <children>
-                              <Label fx:id="damageVulnerabilitiesLabel" text="Damage Vulnerabilitys" />
+                              <Label minWidth="-Infinity" prefWidth="141.0" text="Damage Vulnerabilitys:" />
+                              <Label fx:id="damageVulnerabilitiesLabel" text="Damage Vulnerabilitys" wrapText="true" />
                            </children>
                         </HBox>
-                        <HBox fx:id="damageResistancesHBox" spacing="5.0" styleClass="features">
+                        <HBox fx:id="damageResistancesHBox" alignment="CENTER_LEFT" maxWidth="580.0" spacing="5.0" styleClass="features">
                            <children>
-                              <Label fx:id="damageResistancesLabel" text="Damage Resistances" />
+                              <Label minWidth="-Infinity" prefWidth="132.0" text="Damage Resistances:" />
+                              <Label fx:id="damageResistancesLabel" text="Damage Resistances" wrapText="true" />
                            </children>
                         </HBox>
-                        <HBox fx:id="damageImmunitiesHBox" spacing="5.0" styleClass="features">
+                        <HBox fx:id="damageImmunitiesHBox" alignment="CENTER_LEFT" maxWidth="580.0" spacing="5.0" styleClass="features">
                            <children>
-                              <Label fx:id="damageImmunitiesLabel" text="Damage Immunities" />
+                              <Label minWidth="-Infinity" prefWidth="125.0" text="Damage Immunities:" />
+                              <Label fx:id="damageImmunitiesLabel" text="Damage Immunities" wrapText="true" />
                            </children>
                         </HBox>
-                        <HBox fx:id="conditionImmunitiesHBox" spacing="5.0" styleClass="features">
+                        <HBox fx:id="conditionImmunitiesHBox" alignment="CENTER_LEFT" maxWidth="580.0" spacing="5.0" styleClass="features">
                            <children>
-                              <Label fx:id="conditionImmunitiesLabel" text="Condition Immunities" />
+                              <Label minWidth="-Infinity" prefWidth="134.0" text="Condition Immunities:" />
+                              <Label fx:id="conditionImmunitiesLabel" text="Condition Immunities" wrapText="true" />
                            </children>
                         </HBox>
-                        <HBox fx:id="sensesHBox" spacing="5.0" styleClass="features">
+                        <HBox fx:id="sensesHBox" alignment="CENTER_LEFT" maxWidth="580.0" spacing="5.0" styleClass="features">
                            <children>
-                              <Label text="Senses" />
-                              <Label fx:id="sensesLabel" text="SensesList" />
+                              <Label minWidth="-Infinity" prefWidth="49.0" text="Senses:" />
+                              <Label fx:id="sensesLabel" text="SensesList" wrapText="true" />
                            </children>
                         </HBox>
-                        <HBox fx:id="languagesHBox" spacing="5.0" styleClass="features">
+                        <HBox fx:id="languagesHBox" alignment="CENTER_LEFT" maxWidth="580.0" spacing="5.0" styleClass="features">
                            <children>
-                              <Label text="Languages:" />
-                              <Label fx:id="languagesLabel" text="Languages List" />
+                              <Label minWidth="-Infinity" prefWidth="71.0" text="Languages:" />
+                              <Label fx:id="languagesLabel" text="Languages List" wrapText="true" />
                            </children>
                         </HBox>
-                        <HBox fx:id="challengeRatingHBox" spacing="5.0" styleClass="features">
+                        <HBox fx:id="challengeRatingHBox" alignment="CENTER_LEFT" maxWidth="580.0" spacing="5.0" styleClass="features">
                            <children>
-                              <Label text="Challenge Rating(CR):" />
-                              <Label fx:id="challengeRatingLabel" text="Challenge Rating #" />
+                              <Label minWidth="-Infinity" prefWidth="136.0" text="Challenge Rating(CR):" />
+                              <Label fx:id="challengeRatingLabel" text="Challenge Rating #" wrapText="true" />
                            </children>
                         </HBox>
                         <VBox fx:id="abilitiesVBox" spacing="5.0">
